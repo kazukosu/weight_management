@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 print("hello main.py!")
+print("こんにちは、家のデスクトップ")
 # Flaskとrender_template（HTMLを表示させるための関数）をインポート
 
 # Flaskオブジェクトの生成
