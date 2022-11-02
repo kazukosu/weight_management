@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>サインアップページ</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <a href="/">トップへ</a>
+        <a href="login">ログインページへ</a>
+        {{msg|safe}}
+        <table align="center">
+            <form method="POST" action="signup">
+                <tr><td align="right">メールアドレス</td><td><input type="email" name="id" required></td></tr>
+                <tr><td align="right">身長</td><td><input type="number" name="height" required></td></tr>
+                <tr><td align="right">性別</td><td>
+                    <select name="sex" required>
+                        <option>男</option>
+                        <option>女</option>
+                        <option>他</option>
+                    </select>
+                </td></tr>
+                <tr><td align="right">年齢</td><td><input type="number" name="age" required></td></tr>
+                <tr><td align="right">パスワード</td><td><input type="password" name="passwd" required></td></tr>
+                <tr><td colspan="2" align="right"><input type="submit" value="作成"></td></tr>
+            </form>
+        </table>
+    </body>
+</html>
