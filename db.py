@@ -1,9 +1,10 @@
 import MySQLdb
 
+
 con = MySQLdb.connect(
     host = "localhost",
     user = "root",
-    passwd = "Kosuge123",
+    passwd = "ryo",
     db = "mw"
 )
 
