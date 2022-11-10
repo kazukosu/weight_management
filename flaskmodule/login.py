@@ -9,7 +9,6 @@ import MySQLdb
 
 login_app = Blueprint("loginup",__name__)
 
-
 def connect():
     con = MySQLdb.connect(
         host = "localhost",

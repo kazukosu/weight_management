@@ -3,6 +3,7 @@ from sqlite3 import connect
 from flask import Flask, redirect, render_template,session
 from flaskmodule.signup import signup_app
 from flaskmodule.login import login_app
+from flaskmodule.inputweight import inputweight_app
 import html
 import secrets
 import MySQLdb
@@ -17,6 +18,7 @@ app.secret_key = secrets.token_urlsafe(16)
 app.permanent_session_lifetime = timedelta(minutes=60)
 app.register_blueprint(signup_app)
 app.register_blueprint(login_app)
+app.register_blueprint(inputweight_app)
 
 def connect():
     con = MySQLdb.connect(
@@ -37,6 +39,7 @@ def hello():
 # 「/index」へアクセスがあった場合に、「index.html」を返す
 @app.route("/")
 def index():
+    print(session.keys())
     return render_template("index.html")
 
 @app.route("/home")
@@ -50,6 +53,7 @@ def home():
                                     height=html.escape(str(session["height"])),
                                     admin="<a href=\"admin\">ユーザ情報一覧</a>")
         else:
+            print(session.keys())
             return render_template("success.html",
                                     age=html.escape(str(session["age"])),
                                     email=html.escape(session["email"]),
