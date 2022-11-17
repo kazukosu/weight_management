@@ -28,18 +28,22 @@ def inputweight():
         return render_template("inputweight.html")
     else:
         nowdate = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        nowdate = nowdate
         print(nowdate)
         con = connect()
         cur = con.cursor()
         #datetimeの型がおかしい　要修正
+        #print(type(session['email']))
         cur.execute(
             """
             INSERT INTO weight
             (user_id,date,weight)
             VALUES
-            ({user_id},{date},{weight})
-            """.format(user_id=session["email"], date=str(nowdate), weight=request.form['weight'])
+            (%(user_id)s,%(date)s,%(weight)s)
+            """,{"user_id":session['email'], "date": nowdate,"weight":request.form['weight']}
         )
         con.commit()
         con.close()
+    return render_template("inputweightsuccess.html",
+                           date=nowdate,
+                           weight = request.form['weight']
+                          )
