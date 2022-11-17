@@ -4,6 +4,7 @@ from flask import Flask, redirect, render_template,session
 from flaskmodule.signup import signup_app
 from flaskmodule.login import login_app
 from flaskmodule.inputweight import inputweight_app
+from flaskmodule.outputweight import outputweight_app
 import html
 import secrets
 import MySQLdb
@@ -19,6 +20,7 @@ app.permanent_session_lifetime = timedelta(minutes=60)
 app.register_blueprint(signup_app)
 app.register_blueprint(login_app)
 app.register_blueprint(inputweight_app)
+app.register_blueprint(outputweight_app)
 
 def connect():
     con = MySQLdb.connect(

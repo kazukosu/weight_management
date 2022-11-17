@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>体重表示ページ</title>
+        <meta charset="utf-8">
+    <body>
+        <a href="/">トップへ</a>
+
+        <h1>{{user_id}}さんの体重記録</h1>
+        {% for d,w in data %}
+            <p>日付：{{d}} 　体重：{{w}}</p>
+        {% endfor %}
+        <form action="/inputweight" method="get">
+            <input type="submit" value='Input your weight!'>
+        </form>
+    </body>
+</html>
