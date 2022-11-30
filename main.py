@@ -79,6 +79,7 @@ def admin():
                 res = res + "\t<tr><td align=\"right\">年齢</td><td>" + html.escape(str(row[0])) + "</td></tr>\n"
                 res = res + "\t<tr><td align=\"right\">メールアドレス</td><td>" + html.escape(str(row[1])) + "</td></tr>\n"
                 res = res + "\t<tr><td align=\"right\">身長</td><td>" + html.escape(str(row[2])) + "</td></tr>\n"
+                res = res + "\t<a href=\"home\">ホーム</a>"
             con.close()
             return res
         else:
