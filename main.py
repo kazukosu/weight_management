@@ -16,6 +16,7 @@ print("hello main.py!")
 
 # Flaskオブジェクトの生成
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 app.secret_key = secrets.token_urlsafe(16)
 app.permanent_session_lifetime = timedelta(minutes=60)
 app.register_blueprint(signup_app)
