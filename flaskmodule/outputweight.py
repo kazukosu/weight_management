@@ -37,7 +37,7 @@ def outputweight():
         for row in cur:
             print(row[0])
             data.append([row[0],row[1]])
-
+        print(data)
         return render_template('outputweight.html',
                                 user_id=user_id,
                                 data=data)

@@ -5,6 +5,7 @@ from flaskmodule.signup import signup_app
 from flaskmodule.login import login_app
 from flaskmodule.inputweight import inputweight_app
 from flaskmodule.outputweight import outputweight_app
+from flaskmodule.api import api_app
 import html
 import secrets
 import MySQLdb
@@ -21,6 +22,7 @@ app.register_blueprint(signup_app)
 app.register_blueprint(login_app)
 app.register_blueprint(inputweight_app)
 app.register_blueprint(outputweight_app)
+app.register_blueprint(api_app)
 
 def connect():
     con = MySQLdb.connect(
