@@ -38,6 +38,8 @@ def outputweight():
             print(row[0])
             data.append([row[0],row[1]])
         print(data)
+        con.commit()
+        con.close()
         return render_template('outputweight.html',
                                 user_id=user_id,
                                 data=data)
